@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        // Force ton PC à interroger la vraie adresse officielle de Fabric
+        maven { url = 'https://fabricmc.net' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'donut_auction'

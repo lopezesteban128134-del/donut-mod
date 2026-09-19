@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "donut_auction",
+  "version": "1.0.0",
+  "name": "Donut Auction HUD",
+  "description": "Mod d'enchere et de triche visuelle pour le Donut SMP",
+  "authors": ["Ely"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.ely.auction.DonutAuctionClient"
+    ]
+  },
+  "mixins": [
+    "donut_auction.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.21.11",
+    "fabric-api": "*"
+  }
+}

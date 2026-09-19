@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        // On force ton PC à interroger la vraie adresse URL officielle
+        maven { url = "https://fabricmc.net" }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        // On charge le plugin de modding directement via le serveur stable
+        classpath "net.fabricmc:fabric-loom:1.17-SNAPSHOT"
+    }
+}
+
+apply plugin: "net.fabricmc.loom"
+apply plugin: "maven-publish"
+
+version = '1.0.0'
+group = 'net.ely.auction'
+
+base {
+    archivesName = 'donut_auction'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://fabricmc.net" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.11"
+    mappings "net.fabricmc:yarn:1.21.11+build.6:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.19.5"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = 'UTF-8'
+}
